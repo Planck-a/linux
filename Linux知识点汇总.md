@@ -290,6 +290,20 @@ umask  pwd  if     help if
 
 vim  ~/.bash=======》alias wuxun=’ls-lf’;
 
+5、终端、进程组、SIGHUP以及守护进程的关系
+
+终端就是也是一个进程组，进程组长为bash(pid和ppid都为1)，之后的进程都是由组长fork+exec创建并运行的。bash进程和终端相连，捕捉终端的硬件行为。
+
+终端断开时，会发送SIGHUP给组长bash，组长会把这个SIGHUP转发给所有的组员，使得组员退出。所有当终端关闭时其上的进程都会退出。
+
+如果进程不想退出，有两个办法：
+
+(1)屏蔽SIGHUP：signal(SIGHUP,SIGING);  或者 nohup COMMAD
+
+(2)把进程设置为守护进程，脱离终端控制。
+
+
+
 5、如何开启守护进程
 
 （1）调用umask将文件模式创建屏蔽字设置为0
