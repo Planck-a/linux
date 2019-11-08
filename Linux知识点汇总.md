@@ -62,6 +62,8 @@ head -n 7 /ect/serves
 
 10、chmod
 
+ls-l可以查看文件属性，windows下根据文件后缀判断文件类型，可执行文件为.exe，但是Linux下不看后缀，只要文件属性中rwx中x指为1就是可执行
+
 11、chown
 
 12、find
@@ -290,7 +292,7 @@ umask  pwd  if     help if
 
 vim  ~/.bash=======》alias wuxun=’ls-lf’;
 
-5、终端、进程组、SIGHUP以及守护进程的关系
+## 终端、进程组、SIGHUP以及守护进程的关系
 
 终端就是也是一个进程组，进程组长为bash(pid和ppid都为1)，之后的进程都是由组长fork+exec创建并运行的。bash进程和终端相连，捕捉终端的硬件行为。
 
@@ -304,7 +306,7 @@ vim  ~/.bash=======》alias wuxun=’ls-lf’;
 
 
 
-5、如何开启守护进程
+## 如何开启守护进程
 
 （1）调用umask将文件模式创建屏蔽字设置为0
 
