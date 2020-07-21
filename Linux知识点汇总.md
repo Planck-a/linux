@@ -1,7 +1,9 @@
 ```
 几个重要目录：
-~/.bash   存放所以别名
-/bin/bash    解释器
+~       用户的家目录，日常工作都是在自己的家目录中进行
+/       根目录，所有用户共享，/home/[username]  就是 ~
+~/.bash   存放所有别名
+/bin/bash    解释器，可以运行.sh文件
 /ec/passwd   存放所有用户的信息
 /etc/group    用户组信息
 /etc/vimrc     vim相关的配置，高亮行号
