@@ -148,6 +148,8 @@ cat test.txt|xargs -n3   //把文本连起来后每3个单词为一行
 cat test.txt|xargs -dx -n3   //把文本连起来后把x替换成空格，并以空格为分界线每三个单词为一行
 
 find /etc/test -type f | xargs ls-l //查找出符合条件的文件后显示行的详细情况
+
+find /etc/test -type f | grep -E "*.oss$"|xargs -i{} python3 1.py fetch {} //查找符合模糊查询条件的文件xxx，依次执行python3 1.py fetch xxx
 ```
 18、sed命令
 
